@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+
+  <!--
+    Rule files that don't need localization go in the neutral directory to save duplicating files into each language
+  -->
+  <PropertyGroup Condition="'$(JspsXamlNeutralResourcesDirectory)' == ''">
+    <JspsXamlNeutralResourcesDirectory>$(MSBuildThisFileDirectory)Rules</JspsXamlNeutralResourcesDirectory>
+  </PropertyGroup>
+
+  <!--
+    Locate the approriate localized xaml resources based on the language ID or name.
+    The logic here matches the resource manager sufficiently to handle the fixed set of 
+    possible VS languages and directories on disk.
+    We cannot respect the exact probe order of the resource manager as this has to evaluate statically
+    and we have only LangName and LangID and no access to System.Globalization API.
+  -->
+  <PropertyGroup Condition="'$(JspsXamlResourcesDirectory)' == ''">
+    <!-- 1. Probe for exact match against LangName. (e.g. pt-BR) -->
+    <JspsXamlResourcesDirectory>$(MSBuildThisFileDirectory)Rules\$(LangName)</JspsXamlResourcesDirectory>
+
+    <!-- 2. Handle special cases of languages which would not match above or below. -->
+    <JspsXamlResourcesDirectory Condition="!Exists('$(JspsXamlResourcesDirectory)') and '$(LangID)' == '2052'">$(MSBuildThisFileDirectory)Rules\zh-Hans</JspsXamlResourcesDirectory>
+    <JspsXamlResourcesDirectory Condition="!Exists('$(JspsXamlResourcesDirectory)') and '$(LangID)' == '1028'">$(MSBuildThisFileDirectory)Rules\zh-Hant</JspsXamlResourcesDirectory>
+
+    <!-- 3. Probe for parent by taking portion the portion before the hyphen (e.g. fr-FR -> fr) -->
+    <JspsXamlResourcesDirectory Condition="!Exists('$(JspsXamlResourcesDirectory)')">$(MSBuildThisFileDirectory)Rules\$(LangName.Split('-')[0])</JspsXamlResourcesDirectory>
+
+    <!-- 4. Fall back to neutral resources if all of the above fail -->
+    <JspsXamlResourcesDirectory Condition="!Exists('$(JspsXamlResourcesDirectory)')">$(JspsXamlNeutralResourcesDirectory)</JspsXamlResourcesDirectory>
+  </PropertyGroup>
+
+  <!-- Capabilities for this project.  Conditions should be based on platform|configuration only. -->
+  <ItemGroup>
+    <ProjectCapability Include="JSProjectSystem" />
+    <ProjectCapability Include="UseFileGlobs" />
+    <ProjectCapability Include="OpenProjectFile" />
+    <ProjectCapability Include="HandlesOwnReload" />
+    <ProjectCapability Include="ProjectConfigurationsDeclaredAsItems" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\ProjectItemsSchema.xaml;"/>
+
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\general.xaml;">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\debugger_general.xaml;">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\general_file.xaml">
+      <Context>File</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\scc.xaml">
+      <Context>Invisible</Context>
+    </PropertyPageSchema>
+
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\BuildProperties.xaml">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\DeployProperties.xaml;">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\LaunchJsonDebugger.xaml">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+
+    <PropertyPageSchema Include="
+                        $(JspsXamlResourcesDirectory)\folder.xaml;
+                        $(JspsXamlResourcesDirectory)\none.xaml;
+                        ">
+      <Context>File;BrowseObject</Context>
+    </PropertyPageSchema>
+
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\general.browseobject.xaml">
+      <Context>BrowseObject</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\script.xaml;">
+      <Context>File</Context>
+    </PropertyPageSchema>
+    <PropertyPageSchema Include="$(JspsXamlResourcesDirectory)\script.browseobject.xaml;">
+      <Context>BrowseObject</Context>
+    </PropertyPageSchema>
+  </ItemGroup>
+
+  <Import Project="$(MSBuildProjectFullPath).user" Condition="Exists('$(MSBuildProjectFullPath).user')" />
+
+  <Target Name="Build" >
+    <Exec Command="$(BuildCommand)" WorkingDirectory="$(BuildWorkingDirectory)" Condition=" '$(BuildCommand)' != '' "/>
+  </Target>
+
+  <Target Name="Rebuild">
+    <Exec Command="$(CleanCommand)" WorkingDirectory="$(BuildWorkingDirectory)" Condition=" '$(CleanCommand)' != '' "/>
+    <Exec Command="$(BuildCommand)" WorkingDirectory="$(BuildWorkingDirectory)" Condition=" '$(BuildCommand)' != '' "/>
+  </Target>
+
+  <Target Name="Clean">
+    <Exec Command="$(CleanCommand)" WorkingDirectory="$(BuildWorkingDirectory)" Condition=" '$(CleanCommand)' != '' "/>
+  </Target>
+  
+  <Target Name="Run">
+  </Target>
+</Project>

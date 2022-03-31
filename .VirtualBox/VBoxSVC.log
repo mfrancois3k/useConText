@@ -1,0 +1,102 @@
+00:00:00.003202 main     VirtualBox COM Server 6.1.32 r149290 win.amd64 (Jan 17 2022 11:29:30) release log
+00:00:00.003204 main     Log opened 2022-03-20T01:23:16.474304900Z
+00:00:00.003205 main     Build Type: release
+00:00:00.003209 main     OS Product: Windows 10
+00:00:00.003210 main     OS Release: 10.0.19043
+00:00:00.003210 main     OS Service Pack: 
+00:00:00.046550 main     DMI Product Name: ROG GU501GM
+00:00:00.055682 main     DMI Product Version: 1.0       
+00:00:00.055699 main     Firmware type: UEFI
+00:00:00.055919 main     Secure Boot: VERR_PRIVILEGE_NOT_HELD
+00:00:00.055967 main     Host RAM: 32619MB (31.8GB) total, 18601MB (18.1GB) available
+00:00:00.055971 main     Executable: C:\Program Files\Oracle\VirtualBox\VBoxSVC.exe
+00:00:00.055971 main     Process ID: 4628
+00:00:00.055972 main     Package type: WINDOWS_64BITS_GENERIC
+00:00:00.061829          VirtualBox: object creation starts
+00:00:00.062003          Home directory: 'C:\Users\mfran\.VirtualBox'
+00:00:00.062083          Installed Drivers:
+00:00:00.064185            C:\Windows\system32\DRIVERS\VBoxNetLwf.sys (Version: 6.1.32.49290)
+00:00:00.064890            C:\Windows\system32\DRIVERS\VBoxUSBMon.sys (Version: 6.1.32.49290)
+00:00:00.065290            C:\Windows\system32\DRIVERS\VBoxSup.sys (Version: 6.1.32.49290)
+00:00:00.066168            C:\Windows\system32\DRIVERS\VBoxNetAdp6.sys (Version: 6.1.32.49290)
+00:00:00.070724            C:\Program Files\Oracle\VirtualBox\VBoxDDR0.r0 (Version: 6.1.32.49290)
+00:00:00.077760          Loading settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:00.079879          usbLibGetDevices: Starting USB device enumeration
+00:00:00.082323          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 9
+00:00:00.084662          Getting USB descriptor (id 3) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+00:00:00.085640          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 14
+00:00:00.087132          usbLibGetDevices: Found 4 USB devices, 0 captured
+00:00:00.087174          USB: Unknown USB device detected (idVendor: 0x04f2, idProduct: 0xb57a)
+00:00:00.087195          USB: Unknown USB device detected (idVendor: 0x8087, idProduct: 0x0aaa)
+00:00:00.110467          HostDnsMonitor: initializing
+00:00:00.116328          HostDnsMonitor: updating information
+00:00:00.116345          HostDnsMonitor: old information
+00:00:00.116346            no server entries
+00:00:00.116347            no domain set
+00:00:00.116348            no search string entries
+00:00:00.116348          HostDnsMonitor: new information
+00:00:00.116349            server 1: 192.168.1.1
+00:00:00.116349            domain: myfiosgateway.com
+00:00:00.116350            no search string entries
+00:00:00.175409          VD: VDInit finished with VINF_SUCCESS
+00:00:00.180984          Loading settings file "C:\Users\mfran\VirtualBox VMs\test\test.vbox" with version "1.15-windows"
+00:00:00.181568          VirtualBox: object created
+00:00:01.420204          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:01.435626          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:11.652874          Saving settings file "C:\Users\mfran\VirtualBox VMs\test\test.vbox" with version "1.15-windows"
+01:45:18.941828 USBPROXY usbLibGetDevices: Starting USB device enumeration
+01:45:18.945268 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 9
+01:45:18.948331 USBPROXY Getting USB descriptor (id 3) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+01:45:18.950352 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 14
+01:45:18.951246 USBPROXY usbLibGetDevices: Found 4 USB devices, 0 captured
+08:19:18.306677 dns-monitor HostDnsMonitor: updating information
+08:19:18.306799 dns-monitor HostDnsMonitor: unchanged
+11:47:35.114780 MainPower Host suspending: Paused 0 VMs
+11:49:02.778408 MainPower Host resumed: Resumed 0 VMs
+11:49:03.976778 dns-monitor HostDnsMonitor: updating information
+11:49:03.976825 dns-monitor HostDnsMonitor: unchanged
+12:15:57.133546 USBPROXY usbLibGetDevices: Starting USB device enumeration
+12:15:57.138975 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 9
+12:15:57.141989 USBPROXY Getting USB descriptor (id 3) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+12:15:57.144147 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 14
+12:15:57.145553 USBPROXY usbLibGetDevices: Found 4 USB devices, 0 captured
+12:15:58.472316 USBPROXY usbLibGetDevices: Starting USB device enumeration
+12:15:58.474951 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 9
+12:15:58.477448 USBPROXY Getting USB descriptor (id 3) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+12:15:58.479107 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 14
+12:15:58.479553 USBPROXY usbLibGetDevices: Found 4 USB devices, 0 captured
+12:15:59.113937 USBPROXY usbLibGetDevices: Starting USB device enumeration
+12:15:59.117643 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 9
+12:15:59.120272 USBPROXY Getting USB descriptor (id 3) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+12:15:59.122081 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 14
+12:15:59.122587 USBPROXY usbLibGetDevices: Found 4 USB devices, 0 captured
+12:17:32.880812 MainPower Host suspending: Paused 0 VMs
+13:20:47.361118 MainPower Host resumed: Resumed 0 VMs
+13:20:52.394031 dns-monitor HostDnsMonitor: updating information
+13:20:52.394127 dns-monitor HostDnsMonitor: old information
+13:20:52.394133 dns-monitor   server 1: 192.168.1.1
+13:20:52.394137 dns-monitor   domain: myfiosgateway.com
+13:20:52.394141 dns-monitor   no search string entries
+13:20:52.394144 dns-monitor HostDnsMonitor: new information
+13:20:52.394147 dns-monitor   server 1: 192.168.1.1
+13:20:52.394151 dns-monitor   no domain set
+13:20:52.394153 dns-monitor   no search string entries
+13:20:55.861322 dns-monitor HostDnsMonitor: updating information
+13:20:55.861334 dns-monitor HostDnsMonitor: unchanged
+13:20:56.645648 USBPROXY usbLibGetDevices: Starting USB device enumeration
+13:20:56.647939 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 9
+13:20:56.650046 USBPROXY Getting USB descriptor (id 3) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 10
+13:20:56.651512 USBPROXY Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#4&29fe64cb&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 14
+13:20:56.651672 USBPROXY usbLibGetDevices: Found 4 USB devices, 0 captured
+13:31:55.617164          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+13:31:55.621591          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+13:31:55.636514          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+13:31:55.649942          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+13:31:55.653562          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+13:31:55.663104          Saving settings file "C:\Users\mfran\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+13:32:01.181206 main     VirtualBox: object deletion starts
+13:32:01.181251 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={ad47ad09-787b-44ab-b343-a082a3f2dfb1} aComponent={MediumWrap} aText={Medium 'C:\Users\mfran\VirtualBox VMs\test\test.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+13:32:01.183128 main     HostDnsMonitor: shutting down ...
+13:32:01.183189 main     HostDnsMonitor: shut down
+13:32:01.184842 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={d0a0163f-e254-4e5b-a1f2-011cf991c38d} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+13:32:01.185001 main     VirtualBox: object deleted
